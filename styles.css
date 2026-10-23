@@ -48,3 +48,13 @@ dialog{max-width:min(900px,calc(100% - 30px));max-height:92vh;overflow-y:auto}
 .dialog-art.has-photo{height:min(66vh,600px);min-height:0;align-self:start}
 .dialog-art.has-photo .product-photo{width:100%;height:100%;object-fit:contain;padding:10px}
 @media(max-width:760px){.dialog-art.has-photo{height:min(48vh,360px);min-height:0}.dialog-art.has-photo .product-photo{padding:6px}}
+/* Keep the product badge out of the jewellery photo and stack mobile details cleanly. */
+.product-image.royal-image .royal-ribbon{position:absolute;z-index:2;top:12px;left:12px;max-width:calc(100% - 24px);padding:7px 9px;background:rgba(8,8,8,.86);border:1px solid #b28a42;color:#f1d697;font:600 9px/1.35 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:760px){
+  #product-dialog{width:calc(100% - 28px);max-height:calc(100dvh - 28px);overflow:auto}
+  #dialog-content{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-items:start;gap:16px;padding:40px 20px 24px}
+  #dialog-content>.dialog-art{grid-column:1;grid-row:1;width:100%;margin:0}
+  #dialog-content>.dialog-text{grid-column:1;grid-row:2;position:relative;min-width:0}
+  .dialog-art.has-photo{height:clamp(190px,36vh,300px);min-height:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .dialog-art.has-photo .product-photo{width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center;padding:8px}
+}
